@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+:root {
+  --text-main: #f0f6fc;
+  --text-secondary: #c9d1d9;
+  --bg-main: #0d1117;
+  --bg-secondary: #18212c;
+  --accent-blue: #0098ff;
+  --accent-purple: #7c3aed;
+  --accent-red: #f85149;
+  --accent-green: #56d364;
+}
+
+@theme inline {
+  --color-background: var(--bg-main);
+  --color-foreground: var(--text-main);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--bg-secondary);
+  color: var(--text-main);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: var(--text-2xl) /* 1.875rem = 30px */;
+  line-height: var(
+    --tw-leading,
+    var(--text-3xl--line-height) /* calc(2.25 / 1.875) ≈ 1.2 */
+  );
+  font-weight: 600;
+}
+
+h2 {
+  font-size: var(--text-2xl) /* 1.5rem = 24px */;
+  line-height: var(
+    --tw-leading,
+    var(--text-2xl--line-height) /* calc(2 / 1.5) ≈ 1.3333 */
+  );
+  font-weight: 600;
+}
+
+h3 {
+  font-size: var(--text-xl) /* 1.25rem = 20px */;
+  line-height: var(
+    --tw-leading,
+    var(--text-xl--line-height) /* calc(1.75 / 1.25) ≈ 1.4 */
+  );
+  font-weight: 500;
+}
+
+button,
+.link-btn {
+  background-color: var(--accent-blue);
+  color: var(--text-main);
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease,
+    box-shadow 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover,
+.link-btn:hover {
+  background-color: var(--accent-purple);
+  box-shadow: 0 0 10px var(--accent-purple);
+}
+
+button:active,
+.link-btn:active {
+  background-color: var(--accent-green);
+}
+
+button:disabled,
+.link-btn:disabled {
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.link-btn {
+  height: fit-content;
+  width: fit-content;
+}
+
+.logo {
+  background: linear-gradient(
+    90deg,
+    var(--accent-blue),
+    var(--accent-red),
+    var(--accent-purple)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* для підтримки деяких браузерів */
+  color: transparent;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-inline: calc(var(--spacing) * 6) /* 1.5rem = 24px */;
+}
+
+.blog-content h1 {
+  font-size: var(--text-xl);
+}
+
+.blog-content h2 {
+  font-size: var(--text-lg);
+}
+
+.blog-content h3 {
+  font-size: var(--text-base);
+}
+
+.blog-content h4 {
+  font-size: var(--text-sm);
+}
+
+.blog-content p,
+.blog-content ul,
+.blog-content li {
+  font-size: var(--text-sm);
+}
