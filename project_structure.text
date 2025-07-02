@@ -1,0 +1,85 @@
+- .env
+- .gitignore
+- eslint.config.mjs
+- next-env.d.ts
+- next.config.ts
+- package-lock.json
+- package.json
+- postcss.config.mjs
+- prisma
+  - migrations-neon
+    - 20250618191937_init
+      - migration.sql
+    - migration_lock.toml
+  - schema.prisma
+- public
+  - icons
+    - github-black.svg
+    - github-white.svg
+    - google-color.svg
+    - google-white.svg
+    - logo.svg
+- src
+  - actions
+    - actions.ts
+  - app
+    - add-post
+      - page.tsx
+    - api
+      - auth
+        - [...nextauth]
+          - route.ts
+    - auth
+      - page.tsx
+    - dashboard
+      - page.tsx
+    - generated
+      - prisma
+        - client.d.ts
+        - client.js
+        - default.d.ts
+        - default.js
+        - edge.d.ts
+        - edge.js
+        - index-browser.js
+        - index.d.ts
+        - index.js
+        - package.json
+        - query_engine-windows.dll.node
+        - runtime
+          - edge-esm.js
+          - edge.js
+          - index-browser.d.ts
+          - index-browser.js
+          - library.d.ts
+          - library.js
+          - react-native.js
+          - wasm-compiler-edge.js
+          - wasm-engine-edge.js
+        - schema.prisma
+        - wasm.d.ts
+        - wasm.js
+    - globals.css
+    - icon.svg
+    - layout.tsx
+    - page.tsx
+    - [category]
+      - page.tsx
+      - [slug]
+        - page.tsx
+  - components
+    - github-sign-in.tsx
+    - google-sign-in.tsx
+    - Header.tsx
+    - sign-out.tsx
+    - ui
+      - button.tsx
+      - input.tsx
+  - lib
+    - actions.ts
+    - auth.ts
+    - db.ts
+    - executeAction.ts
+    - schema.ts
+    - utils.ts
+- tsconfig.json

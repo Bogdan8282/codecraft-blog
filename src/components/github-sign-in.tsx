@@ -10,7 +10,7 @@ const GitHubSignIn = () => {
         await signIn("github");
       }}
     >
-      <Button className="w-full" variant="outline">
+      <Button className="w-full btn" variant="outline">
         <Image src="/icons/github-white.svg" alt="GitHub" width={18} height={18} />
         Продовжити з GitHub
       </Button>

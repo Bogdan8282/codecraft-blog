@@ -10,7 +10,7 @@ const GoogleSignIn = () => {
         await signIn("google");
       }}
     >
-      <Button className="w-full" variant="outline">
+      <Button className="w-full btn" variant="outline">
         <Image src="/icons/google-white.svg" alt="Google" width={18} height={18} />
         Продовжити з Google
       </Button>

@@ -58,8 +58,9 @@ h3 {
   font-weight: 500;
 }
 
-button,
-.link-btn {
+.btn,
+.link-btn,
+.small-btn {
   background-color: var(--accent-blue);
   color: var(--text-main);
   border: none;
@@ -75,19 +76,16 @@ button,
   justify-content: center;
 }
 
-button:hover,
-.link-btn:hover {
+.btn:hover,
+.link-btn:hover,
+.small-btn:hover {
   background-color: var(--accent-purple);
   box-shadow: 0 0 10px var(--accent-purple);
 }
 
-button:active,
-.link-btn:active {
-  background-color: var(--accent-green);
-}
-
-button:disabled,
-.link-btn:disabled {
+.btn:disabled,
+.link-btn:disabled,
+.small-btn:disabled {
   background-color: var(--bg-secondary);
   color: var(--text-secondary);
   cursor: not-allowed;
@@ -97,6 +95,28 @@ button:disabled,
 .link-btn {
   height: fit-content;
   width: fit-content;
+}
+
+.small-btn {
+  padding: 0.55rem 0.65rem;
+}
+
+.success-btn {
+  background-color: var(--accent-green);
+}
+
+.success-btn:hover {
+  background-color: var(--accent-green);
+  box-shadow: 0 0 10px var(--accent-green);
+}
+
+.fail-btn {
+  background-color: var(--accent-red);
+}
+
+.fail-btn:hover {
+  background-color: var(--accent-red);
+  box-shadow: 0 0 10px var(--accent-red);
 }
 
 .logo {

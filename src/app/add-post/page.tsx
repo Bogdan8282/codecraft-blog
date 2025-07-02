@@ -8,7 +8,9 @@ export default async function AddPost() {
         <form action={createPost}>
           <input type="text" name="title" placeholder="Title" />
           <textarea name="content" rows={5} placeholder="Content" />
-          <button type="submit">Create post</button>
+          <button type="submit" className="btn">
+            Create post
+          </button>
           <br />
           <Link href="/posts">Go back</Link>
         </form>
