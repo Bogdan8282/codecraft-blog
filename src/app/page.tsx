@@ -15,6 +15,7 @@ export default async function PostsPage() {
       author: true,
       Tags: true,
     },
+    take: 8,
   });
 
   return (
@@ -22,6 +23,11 @@ export default async function PostsPage() {
       <Header />
       <main className="w-full">
         <div className="wrapper">
+          <div className="flex gap-6 items-center mb-4">
+            <h2 className="whitespace-nowrap">Останні пости</h2>
+            <hr className="w-full mt-0.5" />
+            <Link href={`/`} className="font-semibold tracking-wider">БІЛЬШЕ</Link>
+          </div>
           <ul className="grid xl:grid-cols-4 sm:grid-cols-3 grid-cols-2 lg:gap-6 gap-4">
             {posts.map((post) => (
               <li key={post.id} className="bg-(--bg-main) mb-2 rounded-md">
