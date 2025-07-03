@@ -18,8 +18,8 @@ export default async function PostPage({ params }: Props) {
       slug,
     },
     include: {
-      author: true
-    }
+      author: true,
+    },
   });
 
   const totalRating = await prisma.postRating.aggregate({
@@ -36,15 +36,26 @@ export default async function PostPage({ params }: Props) {
     <>
       <Header />
       <main className="wrapper flex flex-col gap-6">
-        <div className="flex justify-between items-center">
-          <h2 className="w-1/2">{post.title}</h2>
-          <div className="flex gap-4 w-1/2">
+        <div className="flex gap-6 items-center justify-between w-full">
+          <h2 className="whitespace-nowrap">{post.title}</h2>
+          <hr className="flex-grow mt-0.5" />
+          <div className="flex gap-6 items-center">
             <div className="flex gap-2 items-center">
-              <Image src={`/icons/user.svg`} width={20} height={24} alt="user" />
+              <Image
+                src={`/icons/user.svg`}
+                width={20}
+                height={24}
+                alt="user"
+              />
               <span>{post.author?.name ?? "Анонім"}</span>
             </div>
             <div className="flex gap-2 items-center">
-              <Image src={`/icons/calendar.svg`} width={24} height={24} alt="user" />
+              <Image
+                src={`/icons/calendar.svg`}
+                width={24}
+                height={24}
+                alt="calendar"
+              />
               <span>{new Date(post.createdAt).toLocaleDateString()}</span>
             </div>
           </div>

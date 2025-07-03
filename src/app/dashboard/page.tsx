@@ -27,11 +27,14 @@ const Page = async () => {
     <>
       <Header />
       <main className="wrapper flex flex-col gap-6">
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
           <div className="flex">
             <h3>Вітаємо, {session.user?.name}!</h3>
           </div>
-          <SignOut />
+          <div className="flex gap-6 items-center">
+            <Link href={`/dashboard/add-post`} className="link-btn">Новий пост</Link>
+            <SignOut />
+          </div>
         </div>
         <div>
           <h2 className="mb-4">Ваші пости:</h2>
