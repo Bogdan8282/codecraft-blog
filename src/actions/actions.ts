@@ -16,11 +16,6 @@ export async function createPost(formData: FormData) {
         connect: {
           email: "john@gmail.com",
         },
-      },
-      Category: {
-        connect: {
-          slug: "other",
-        },
       }
     },
   });

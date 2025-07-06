@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
         content,
         slug,
         authorId: user.id,
-        published: true, // або false, якщо хочеш попередньо не публікувати
+        published: true,
       },
     });
 
