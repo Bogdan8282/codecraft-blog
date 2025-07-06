@@ -6,9 +6,7 @@ import RatingButtons from "@/components/RatingButtons";
 import Image from "next/image";
 
 type Props = {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 };
 
 export default async function PostPage({ params }: Props) {

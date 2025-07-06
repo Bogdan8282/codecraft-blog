@@ -5,6 +5,10 @@ import { auth } from "@/lib/auth";
 import TagSelector from "@/components/TagSelector";
 import Header from "@/components/Header";
 
+interface RedirectError extends Error {
+  digest?: string;
+}
+
 async function createPost(formData: FormData) {
   "use server";
 
@@ -38,7 +42,13 @@ async function createPost(formData: FormData) {
     });
     redirect("/");
   } catch (error) {
-    console.error("Failed to create post:", error);
+    const e = error as RedirectError;
+
+    if (e.digest?.startsWith("NEXT_REDIRECT")) {
+      throw e; // Дозволяємо Next.js обробити редірект
+    }
+
+    console.error("Failed to create post:", e);
     throw new Error("Failed to create post");
   }
 }

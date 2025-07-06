@@ -40,7 +40,7 @@ export default async function PostsPage() {
       <main className="w-full">
         <div className="wrapper">
           <section className="mb-8">
-            <div className="flex gap-6 items-center mb-4">
+            <div className="flex gap-6 items-center mb-4 py-1">
               <h2 className="whitespace-nowrap">Останні пости</h2>
               <hr className="w-full mt-0.5" />
               <Link href={`/`} className="font-semibold tracking-wider">

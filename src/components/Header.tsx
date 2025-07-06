@@ -6,7 +6,7 @@ import { auth } from "@/lib/auth";
 export default async function Header() {
   const session = await auth();
   return (
-    <header className="w-full mb-8">
+    <header className="w-full mb-8 bg-(--bg-main)">
       <div className="wrapper px-6 py-6 flex justify-between">
         <div>
           <Link
