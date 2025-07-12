@@ -1,9 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function TagSelector({ tags }: { tags: { id: number; name: string }[] }) {
+export default function TagSelector({
+  tags,
+  defaultSelected = [],
+}: {
+  tags: { id: number; name: string }[];
+  defaultSelected?: number[];
+}) {
   const [selectedTags, setSelectedTags] = useState<number[]>([]);
+
+  useEffect(() => {
+    setSelectedTags(defaultSelected);
+  }, [defaultSelected]);
 
   const handleTagToggle = (tagId: number) => {
     setSelectedTags((prev) =>
@@ -15,7 +25,7 @@ export default function TagSelector({ tags }: { tags: { id: number; name: string
 
   return (
     <div className="space-y-2">
-      <label>Tags</label>
+      <label>Теги</label>
       <div className="flex flex-wrap gap-2">
         {tags.map((tag) => (
           <div key={tag.id} className="flex items-center space-x-2">

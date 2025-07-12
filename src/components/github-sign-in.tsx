@@ -1,5 +1,4 @@
 import { signIn } from "@/lib/auth";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 const GitHubSignIn = () => {
@@ -10,10 +9,10 @@ const GitHubSignIn = () => {
         await signIn("github");
       }}
     >
-      <Button className="w-full btn" variant="outline">
+      <button className="w-full btn flex gap-2">
         <Image src="/icons/github-white.svg" alt="GitHub" width={18} height={18} />
         Продовжити з GitHub
-      </Button>
+      </button>
     </form>
   );
 };

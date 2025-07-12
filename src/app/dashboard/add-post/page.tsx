@@ -1,5 +1,4 @@
 import { redirect } from "next/navigation";
-import { Button } from "@/components/ui/button";
 import prisma from "@/lib/db";
 import { auth } from "@/lib/auth";
 import TagSelector from "@/components/TagSelector";
@@ -14,7 +13,7 @@ async function createPost(formData: FormData) {
 
   const session = await auth();
   if (!session?.user?.id) {
-    redirect("/");
+    redirect("/dashboard");
   }
 
   const title = formData.get("title") as string;
@@ -55,7 +54,7 @@ async function createPost(formData: FormData) {
 
 export default async function AddPostPage() {
   const session = await auth();
-  if (!session) redirect("/");
+  if (!session) redirect("/dashboard");
 
   const tags = await prisma.tag.findMany({
     select: {
@@ -98,7 +97,7 @@ export default async function AddPostPage() {
 
           <TagSelector tags={tags} />
 
-          <Button type="submit">Create Post</Button>
+          <button type="submit">Create Post</button>
         </form>
       </main>
     </>

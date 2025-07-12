@@ -1,5 +1,4 @@
 import { signIn } from "@/lib/auth";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 const GoogleSignIn = () => {
@@ -10,10 +9,10 @@ const GoogleSignIn = () => {
         await signIn("google");
       }}
     >
-      <Button className="w-full btn" variant="outline">
+      <button className="w-full btn flex gap-2">
         <Image src="/icons/google-white.svg" alt="Google" width={18} height={18} />
         Продовжити з Google
-      </Button>
+      </button>
     </form>
   );
 };
