@@ -13,7 +13,7 @@ async function createPost(formData: FormData) {
 
   const session = await auth();
   if (!session?.user?.id) {
-    redirect("/dashboard");
+    redirect("/");
   }
 
   const title = formData.get("title") as string;
@@ -39,7 +39,7 @@ async function createPost(formData: FormData) {
         },
       },
     });
-    redirect("/");
+    redirect("/dashboard");
   } catch (error) {
     const e = error as RedirectError;
 

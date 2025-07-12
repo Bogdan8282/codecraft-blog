@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function TagSelector({
   tags,
@@ -9,11 +9,7 @@ export default function TagSelector({
   tags: { id: number; name: string }[];
   defaultSelected?: number[];
 }) {
-  const [selectedTags, setSelectedTags] = useState<number[]>([]);
-
-  useEffect(() => {
-    setSelectedTags(defaultSelected);
-  }, [defaultSelected]);
+  const [selectedTags, setSelectedTags] = useState<number[]>(defaultSelected);
 
   const handleTagToggle = (tagId: number) => {
     setSelectedTags((prev) =>

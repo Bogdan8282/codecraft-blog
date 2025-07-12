@@ -5,6 +5,7 @@ import prisma from "@/lib/db";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import ReactMarkdown from "react-markdown";
+import { deletePost } from "@/actions/actions"; // Імпортуємо серверну дію
 
 const DashboardPage = async () => {
   const session = await auth();
@@ -43,7 +44,7 @@ const DashboardPage = async () => {
           <ul className="grid xl:grid-cols-4 sm:grid-cols-3 grid-cols-2 lg:gap-6 gap-4">
             {posts.map((post) => (
               <li key={post.id} className="flex flex-col gap-2">
-                <div key={post.id} className="bg-(--bg-main) rounded-md">
+                <div className="bg-(--bg-main) rounded-md">
                   <Link
                     href={`/${post.slug}`}
                     className="flex flex-col gap-1 justify-between h-full text-xl text-(--text-main) p-4"
@@ -75,13 +76,16 @@ const DashboardPage = async () => {
                 <div className="w-full max-w-md mx-auto flex gap-2">
                   <Link
                     href={`/dashboard/edit-post/${post.id}`}
-                    className="link-btn flex-1"
+                    className="link-btn w-1/2"
                   >
                     Редагувати
                   </Link>
-                  <button className="btn flex-1">
-                    Видалити
-                  </button>
+                  <form action={deletePost} className="w-1/2">
+                    <input type="hidden" name="postId" value={post.id} />
+                    <button type="submit" className="btn w-full">
+                      Видалити
+                    </button>
+                  </form>
                 </div>
               </li>
             ))}

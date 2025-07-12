@@ -17,7 +17,7 @@ async function updatePost(postId: string, formData: FormData) {
 
   const session = await auth();
   if (!session?.user?.id) {
-    redirect("/dashboard");
+    redirect("/");
   }
 
   const title = formData.get("title") as string;
